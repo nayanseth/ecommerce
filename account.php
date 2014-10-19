@@ -5,7 +5,8 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if(!isset($_SESSION["username"])) {
-  header("location:index.php");
+  echo '<h1>Invalid Login! Redirecting...</h1>';
+  header("Refresh: 3; url=index.php");
 }
 
 if($_SESSION["type"]==="admin") {

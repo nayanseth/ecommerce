@@ -7,7 +7,7 @@ include 'config.php';
 
 $username = $_POST["username"];
 $password = $_POST["pwd"];
-
+$flag = 'true';
 //$query = $mysqli->query("SELECT email, password from users");
 
 $result = $mysqli->query('SELECT id,email,password,fname,type from users order by id asc');
@@ -25,12 +25,19 @@ if($result){
       $_SESSION['id'] = $obj->id;
       $_SESSION['fname'] = $obj->fname;
       header("location:index.php");
-    }
+    } else {
 
-    else {
-      header("location:index.php");
+        if($flag === 'true'){
+          redirect();
+          $flag = 'false';
+        }
     }
   }
+}
+
+function redirect() {
+  echo '<h1>Invalid Login! Redirecting...</h1>';
+  header("Refresh: 3; url=index.php");
 }
 
 
