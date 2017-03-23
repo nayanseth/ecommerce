@@ -25,6 +25,7 @@ if($result) {
     }
     else {
       $newqty = $obj->qty + $_SESSION["products_id"][$i];
+      if($newqty < 0) $newqty = 0; //So, Qty will not be in negative.
       $update = $mysqli->query("UPDATE products SET qty =".$newqty." WHERE id =".$x);
       if($update)
         echo 'Data Updated';
