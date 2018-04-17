@@ -1,6 +1,8 @@
 ecommerce
 =========
 
+**Note: This project is no longer being maintained.**
+
 A PHP e-commerce web application.
 
 1. To set this web application, make sure PHP and PHPMyAdmin is installed on your server.
