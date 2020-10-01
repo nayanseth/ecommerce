@@ -5,7 +5,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
